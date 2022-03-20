@@ -5,46 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 16:34:13 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/03 19:23:01 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/06 15:29:42 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/12 20:16:44 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *ft_strcat(char *dest, char const *src)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
+	size_t	len_s1;
+	size_t	len_s2;
+	char	*s;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != 0)
-		i++;
-	while (src[j] != '\0')
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	s = malloc(len_s1 + len_s2 + 1);
+	if (s != NULL)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		ft_memcpy(s, s1, len_s1 + 1);
+		ft_memcpy(s + len_s1, s2, len_s2 + 1);
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char *ft_strjoin(char const *s1, char const *s2)
-{
-    char	*stringtab;
-	int		s1len;
-	int		s2len;
-
-	s1len = ft_strlen(s1);
-	s2len = ft_strlen(s2);
-	stringtab = malloc(s1len + s2len + 1);
-	if (stringtab != NULL)
-	{
-		ft_strcat(stringtab, s1);
-		ft_strcat(stringtab + s1len, s2);
-	}
-
-	return (stringtab);
+	return (s);
 }

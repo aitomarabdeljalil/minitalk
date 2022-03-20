@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 15:56:13 by syakoubi          #+#    #+#             */
-/*   Updated: 2021/11/07 16:28:37 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/03/16 12:39:10 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/03/19 21:20:05 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef MINITALK_H
+# define MINITALK_H
+# include <signal.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
 
-int	ft_tolower(int c)
-{
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
-}
+#endif

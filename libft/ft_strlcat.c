@@ -5,29 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 10:38:27 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/03 14:38:31 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/05 12:45:27 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/20 14:21:38 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    size_t  dl;
-	size_t	sl;
-	size_t  i;
+	size_t	i;
+	size_t	j;
+	size_t	size;
 
-	dl = ft_strlen(dst);
-	sl = ft_strlen((char *)src);
+	size = 0;
 	i = 0;
-	if (dstsize == 0 || dstsize <= dl)
-		return (sl + dstsize);
-	while (i < sl && i < dstsize - dl - 1)
-	{
-		dst[dl + i] = src[i];
+	while (dst[i] != '\0')
 		i++;
+	while (src[size])
+		size++;
+	if (dstsize <= i)
+		size += dstsize;
+	else
+		size += i;
+	j = 0;
+	if (dstsize != 0)
+	{
+		while (src[j] != '\0' && i < dstsize - 1)
+			dst[i++] = src[j++];
 	}
-	dst[dl + i] = '\0';
-	return (dl + sl);
+	dst[i] = '\0';
+	return (size);
 }

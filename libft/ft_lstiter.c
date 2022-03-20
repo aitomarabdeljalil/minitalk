@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 15:56:13 by syakoubi          #+#    #+#             */
-/*   Updated: 2021/11/07 16:28:37 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/10 13:07:17 by aait-oma          #+#    #+#             */
+/*   Updated: 2021/11/20 15:55:51 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	while (lst && f)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

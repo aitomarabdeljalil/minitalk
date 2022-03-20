@@ -5,17 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 11:02:25 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/02 09:54:12 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/04 17:27:56 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/07 12:47:17 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if (c >= 0 && c <= 127)
-        return (c);
-    return (0);
+	return (c >= 0 && c <= 127);
 }
-

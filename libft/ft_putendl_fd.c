@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 15:56:13 by syakoubi          #+#    #+#             */
-/*   Updated: 2021/11/07 16:28:37 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/07 12:08:27 by aait-oma          #+#    #+#             */
+/*   Updated: 2021/11/12 20:06:00 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
+	if (s)
+	{
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
+	}
 }

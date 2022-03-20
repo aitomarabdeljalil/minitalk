@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 09:08:22 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/03 09:24:07 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/04 15:09:14 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/20 12:17:36 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char *t1;
-	char *t2;
-	int	i;
+	const unsigned char	*ps1;
+	const unsigned char	*ps2;
+	size_t				i;
 
-	*t1 = (char *) s1;
-	*t2 = (char *) s2;
-	i = 0;
-	if (t1 == 0 && t2 == 0)
+	if (n == 0)
 		return (0);
-	while (t1[i] == t2[i])
+	i = 0;
+	ps1 = s1;
+	ps2 = s2;
+	while (ps1[i] == ps2[i] && i < n - 1)
 		i++;
-	return (t1[i] - t2[i]);
+	return (ps1[i] - ps2[i]);
 }

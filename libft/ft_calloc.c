@@ -5,24 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 18:43:12 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/03 14:35:34 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/07 12:45:33 by aait-oma          #+#    #+#             */
+/*   Updated: 2021/11/07 16:30:15 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    void *p;
+	void	*b;
 
-    p = NULL;
-    if (count == 0 || size == 0)
-        return (p);
-    p = malloc(count * size);
-    if (p != NULL)
-    {
-        ft_bzero(p, count * size);
-    }
-    return (p);
+	b = malloc(count * size);
+	if (b == NULL)
+		return (NULL);
+	return (ft_memset(b, 0, count * size));
 }

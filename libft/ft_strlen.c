@@ -5,20 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 11:16:07 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/01 16:08:57 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/03 16:01:07 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/07 16:17:37 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
-    size_t len;
+	size_t	i;
 
-    len = 0;
-    while (str[len] != '\0')
-        len++;
-    return (len);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
-

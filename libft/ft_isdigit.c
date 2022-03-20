@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 10:13:30 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/01 15:09:49 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/03 14:09:36 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/07 12:47:49 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if (c > 47 && c < 58)
-        return (c);
-    return (0);
+	return (c >= 48 && c <= 57);
 }

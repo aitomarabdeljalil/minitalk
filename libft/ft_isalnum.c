@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 10:42:19 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/01 18:41:31 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/07 12:45:44 by aait-oma          #+#    #+#             */
+/*   Updated: 2021/11/07 12:45:45 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if ((ft_isalpha(c) || ft_isdigit(c)))
-        return (c);
-    return (0);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 09:29:39 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/01 15:10:01 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/03 14:05:24 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/07 12:46:35 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if ((c > 64 && c < 91) || (c > 96 && c < 123))
-        return (c);
-    return (0);
+	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
 }

@@ -5,24 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 08:39:10 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/03 16:20:36 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/03 16:21:01 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/12 22:02:58 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    char *p;
-    size_t  i;
-    
-    p = b;
-    i = 0;
-    while(len--)
-    {
-        p[i] = (unsigned char) c;
-        i++;
-    }
-    return (b);
+	unsigned char	*pb;
+	size_t			i;
+
+	pb = b;
+	i = 0;
+	while (i < len)
+		pb[i++] = (unsigned char)c;
+	return (b);
 }
