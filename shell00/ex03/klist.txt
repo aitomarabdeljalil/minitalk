@@ -1,6 +1,0 @@
-Credentials cache: API:22699CE5-3A30-4DCD-B3B6-CAD8C744F55C
-        Principal: aait-oma@1337.MA
-
-  Issued                Expires               Principal
-Jun 23 08:45:59 2021  Jun 23 18:45:59 2021  krbtgt/1337.MA@1337.MA
-Jun 23 08:46:02 2021  Jun 23 18:45:59 2021  HTTP/iscsi.1337.ma@1337.MA
