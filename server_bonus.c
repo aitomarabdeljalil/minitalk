@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <signal.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include "libft/libft.h"
-#include "minitalk.h"
 
 void	initialize(int *x, char *c, int *pid, int ipid)
 {
@@ -20,14 +22,14 @@ void	initialize(int *x, char *c, int *pid, int ipid)
 	*pid = ipid;
 }
 
-void	handler_sig(int sig, siginfo_t *info, void *vv)
+void	handler_sig(int sig, siginfo_t *info, void *nothing)
 {
 	static int	x = 0;
 	static char	c = 0;
 	static int	pid = 0;
 	char		shift;
 
-	(void)vv;
+	(void)nothing;
 	if (info->si_pid != pid)
 		initialize(&x, &c, &pid, info->si_pid);
 	if (sig == SIGUSR1)

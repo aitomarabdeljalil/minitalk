@@ -29,14 +29,14 @@ bonus: $(CBNAME) $(SBNAME)
 libft/libft.a:
 	make -C libft
 
-$(CNAME): $(CSRC) libft/libft.a minitalk.h
+$(CNAME): $(CSRC) libft/libft.a
 	$(CC) $(CFLAGS) -o $(CNAME) $(CSRC) libft/libft.a
 
-$(SNAME): $(SSRC) libft/libft.a minitalk.h
+$(SNAME): $(SSRC) libft/libft.a
 	$(CC) $(CFLAGS) -o $(SNAME) $(SSRC) libft/libft.a
 
-$(CBNAME): $(CBSRC) libft/libft.a minitalk.h
+$(CBNAME): $(CBSRC) libft/libft.a
 	$(CC) $(CFLAGS) -o $(CBNAME) $(CBSRC) libft/libft.a
 
-$(SBNAME): $(SBSRC) libft/libft.a minitalk.h
+$(SBNAME): $(SBSRC) libft/libft.a
 	$(CC) $(CFLAGS) -o $(SBNAME) $(SBSRC) libft/libft.a

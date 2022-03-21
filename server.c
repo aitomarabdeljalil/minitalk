@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_bonus.c                                     :+:      :+:    :+:   */
+/*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 11:53:00 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/03/20 16:57:19 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/03/21 16:05:48 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <signal.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include "libft/libft.h"
-#include "minitalk.h"
 
 void	handler_sig(int sig, siginfo_t *info, void *nothing)
 {
@@ -49,6 +51,7 @@ int	main(int ac, char **av)
 	if (pid == -1)
 		exit(1);
 	ft_putnbr_fd(pid, 1);
+	ft_putchar_fd('\n', 1);
 	sa.sa_sigaction = &handler_sig;
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
