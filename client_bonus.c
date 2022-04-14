@@ -36,7 +36,7 @@ void	ft_send(char *str, int sid)
 			if ((str[i] >> bit) & 1)
 			{
 				if (kill(sid, SIGUSR1))
-					exit(EXIT_FAILURE);
+					exit(1);
 			}
 			else
 				kill(sid, SIGUSR2);
@@ -51,8 +51,11 @@ int	main(int ac, char **av)
 {
 	int		sid;
 
-	if (ac != 3 && printf("Error\n"))
+	if (ac != 3)
+	{
+		ft_putendl_fd("Error", 2);
 		exit(1);
+	}
 	sid = ft_atoi(av[1]);
 	signal(SIGUSR1, &handler);
 	if (sid <= 0)

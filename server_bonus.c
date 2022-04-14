@@ -15,23 +15,27 @@
 #include <stdlib.h>
 #include "libft/libft.h"
 
-void	initialize(int *x, char *c, int *pid, int ipid)
+void	print(char c, siginfo_t *info)
 {
-	x = 0;
-	c = 0;
-	*pid = ipid;
+	if (c == 0)
+		kill(info->si_pid, SIGUSR1);
+	ft_putchar_fd(c, 1);
 }
 
 void	handler_sig(int sig, siginfo_t *info, void *nothing)
 {
-	static int	x = 0;
-	static char	c = 0;
-	static int	pid = 0;
+	static int	x;
+	static char	c;
+	static int	pid;
 	char		shift;
 
 	(void)nothing;
 	if (info->si_pid != pid)
-		initialize(&x, &c, &pid, info->si_pid);
+	{
+		x = 0;
+		c = 0;
+		pid = info->si_pid;
+	}
 	if (sig == SIGUSR1)
 		shift = 1 << x;
 	else
@@ -39,9 +43,7 @@ void	handler_sig(int sig, siginfo_t *info, void *nothing)
 	c += shift;
 	if (x == 7)
 	{
-		if (c == 0)
-			kill(info->si_pid, SIGUSR1);
-		ft_putchar_fd(c, 1);
+		print(c, info);
 		x = 0;
 		c = 0;
 	}
@@ -55,8 +57,6 @@ int	main(void)
 	struct sigaction	sa;
 
 	pid = getpid();
-	if (pid == -1)
-		exit(1);
 	ft_putnbr_fd(pid, 1);
 	ft_putchar_fd('\n', 1);
 	sa.sa_flags = SA_SIGINFO;
